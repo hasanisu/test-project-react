@@ -7,8 +7,8 @@ const UseEffectExample = () => {
       <button onClick={() => setHidden((prev) => !prev)}>
         {hidden ? "Show" : "Hide"}
       </button>
-      {/* {!hidden && <Counter></Counter>} */}
-      {!hidden && <Todo></Todo>}
+      {!hidden && <Counter></Counter>}
+      {/* {!hidden && <Todo></Todo>} */}
     </div>
   );
 };
@@ -36,7 +36,7 @@ const Todo = () => {
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/todos/1", { signal })
       .then((res) => res.json())
-      .then((data) => alert(data.title));
+      .then((data) => console.log(data));
 
     return () => {
       controller.abort();
